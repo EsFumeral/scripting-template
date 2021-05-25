@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 settings/
-
+#todo lo que está dentro de settings no se ve efe :
