@@ -1,9 +1,9 @@
 #!/bin/bash
 #### Description: Creates custom settings files from template
-#### Written by: Guillermo de Ignacio - gdeignacio@fundaciobit.org on 04-2021
+#### Written by: Guillermo de Ignacio - gdeignacio@esliceu.com on 04-2021
 
 ###################################
-###         SETUP UTILS         ###
+###   SETUP UTILS               ###
 ###################################
 
 echo ""
@@ -22,6 +22,15 @@ for FILE in $TEMPLATE_FOLDER/*; do
     MASK=${FILE%.template}
     FILENAME=${MASK##*/}
     NEWFILE=$SETTINGS_FOLDER/$FILENAME
+
+    # Checking if previous version of NEWFILE exists
+    if [[ -f "$NEWFILE" ]]
+    then
+      TIMESTAMP=`date +%Y-%m-%d_%H-%M-%S`
+      NEWFILEBACKUP=${NEWFILE}.${TIMESTAMP}.backup
+      echo "Backing up old $NEWFILE to $NEWFILEBACKUP"
+      mv $NEWFILE $NEWFILEBACKUP
+    fi
     echo "Transforming filename from $FILE to $NEWFILE"
     cp $FILE $NEWFILE
 done

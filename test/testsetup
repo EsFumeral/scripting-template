@@ -1,6 +1,6 @@
 #!/bin/bash
 #### Description: Checks Java and Maven version
-#### Written by: Guillermo de Ignacio - gdeignacio@fundaciobit.org on 04-2021
+#### Written by: Guillermo de Ignacio - gdeignacio@esliceu.com on 04-2021
 
 ###################################
 ###   Test environment values   ###
