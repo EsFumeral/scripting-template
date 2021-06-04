@@ -1,7 +1,7 @@
 #!/bin/bash
 #### Description: Notificació de missatges del sistema 
 #### per Telegram usant un Bot 
-#### Written by: Guillermo de Ignacio - gdeignacio@fundaciobit.org on 04-2021
+#### Written by: Guillermo de Ignacio - gdeignacio@esliceu.com on 04-2021
 
 ###################################
 ###   CHATBOT UTILS             ###

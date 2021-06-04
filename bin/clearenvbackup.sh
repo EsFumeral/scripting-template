@@ -1,21 +1,20 @@
 #!/bin/bash
-#### Description: Checks environment variables
+#### Description: Removes *.backup files
 #### Written by: Guillermo de Ignacio - gdeignacio@esliceu.com on 04-2021
 
 ###################################
-###   Test environment values   ###
+###   SETUP UTILS               ###
 ###################################
 
-DOCKER_COMPOSE=$(which docker-compose)
 echo ""
-echo "Docker compose at $DOCKER_COMPOSE"
-echo ""
-####################
-
 PROJECT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
 echo "Project path at $PROJECT_PATH"
 echo ""
-echo "[$(date +"%Y-%m-%d %T")] Testing env..."
+echo "[$(date +"%Y-%m-%d %T")] Clearing backup files..."
 echo ""
 
-source $PROJECT_PATH/bin/loadenv.sh
+for FILE in settings/*.backup; do
+    echo "Removing "$FILE
+    rm $FILE
+done
+echo ""
